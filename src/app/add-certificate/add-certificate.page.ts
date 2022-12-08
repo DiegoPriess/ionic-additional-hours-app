@@ -64,6 +64,7 @@ export class AddCertificatePage {
   async showToaster() {
     const toast = await this.toastController.create({
       message: 'Certificado adicionado com sucesso',
+      cssClass: "toast-success",
       duration: 3000
     });
 

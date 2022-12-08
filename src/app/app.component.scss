@@ -1,3 +1,11 @@
-ion-item:focus {
+.toast-success {
+    background: #00aeff;
+}
+
+.item-has-focus {
+    border-color: #0F0F0F !important;
+}
+
+* {
     border-color: #0F0F0F !important;
 }

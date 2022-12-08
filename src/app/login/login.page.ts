@@ -31,7 +31,7 @@ export class LoginPage {
 				catchError(this.handleError.bind(this))
 			).subscribe((response) => {
         this.isFieldsAvailable = true;
-				this.router.navigate(['/home-adm']);
+				this.router.navigate(response["permission"] == 1 ? ['/home-adm'] : ['/home-student'], response);
 			});
 	}
 
