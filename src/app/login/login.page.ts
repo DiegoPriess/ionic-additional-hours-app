@@ -30,6 +30,7 @@ export class LoginPage {
 				retry(2),
 				catchError(this.handleError.bind(this))
 			).subscribe((response) => {
+        this.isFieldsAvailable = true;
 				this.router.navigate(['/home-adm']);
 			});
 	}
