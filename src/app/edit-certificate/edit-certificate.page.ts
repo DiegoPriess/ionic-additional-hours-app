@@ -62,7 +62,7 @@ export class EditCertificatePage {
 	};
 
   alterCertificate() {
-    this.httpClient.post(`${environment.apiUrl}/certificate`, this.certificate, this.httpOptions)
+    this.httpClient.put(`${environment.apiUrl}/certificate`, this.certificate, this.httpOptions)
     .pipe(
       retry(2),
       catchError(this.handleError)
@@ -80,5 +80,9 @@ export class EditCertificatePage {
     });
 
     await toast.present();
+  }
+  
+  backToHome() {
+    this.router.navigate(['/home-student'], this.student);
   }
 }

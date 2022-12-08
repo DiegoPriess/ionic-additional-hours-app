@@ -1,6 +1,20 @@
 .admin-page {
   background-color: #f0f0f0;
 
+  .icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 90%;
+
+    ion-icon {
+      color: #F0F0F0;
+      font-size: 24px;
+      padding: 10px;
+    }
+  }
+  
   .top-header-background {
     display: flex;
     width: 100%;
