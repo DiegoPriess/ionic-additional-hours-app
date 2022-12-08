@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Component, OnInit } from '@angular/core';
 import { catchError, retry, throwError } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 interface UsersData {
 	cpf: string;
 	email: string;
@@ -34,7 +35,7 @@ export class HomeAdmPage implements OnInit {
 	}
 
 	ngOnInit() {
-		this.httpClient.get(`${this.apiUrl}/user/list/0/10`, this.httpOptions)
+		this.httpClient.get(`${environment.apiUrl}/user/list/0/10`, this.httpOptions)
 			.pipe(
 				retry(2),
 				catchError(this.handleError)
