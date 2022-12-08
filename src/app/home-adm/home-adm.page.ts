@@ -21,7 +21,7 @@ export class HomeAdmPage implements OnInit {
 	httpOptions: object = {
 		headers: new HttpHeaders({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*" })
 	}
-	user: any;
+	student: any;
 	apiUrl: string = 'http://181.221.14.79:9003';
 	usersData: UsersData[] = [];
 	filteredUsersData: UsersData[] = this.usersData;
@@ -29,7 +29,7 @@ export class HomeAdmPage implements OnInit {
 
 	constructor(private httpClient: HttpClient, private router: Router, private route: ActivatedRoute) {
 		this.route.queryParams.subscribe(params => {
-			this.user = this.router.getCurrentNavigation()?.extras;
+			this.student = this.router.getCurrentNavigation()?.extras;
 		});
 	}
 
@@ -39,14 +39,10 @@ export class HomeAdmPage implements OnInit {
 				retry(2),
 				catchError(this.handleError)
 			).subscribe((response) => {
-				console.log(response);
 				response["content"].map((item: UsersData) => {
 					this.usersData.push(item);
 				})
-				console.log(this.usersData);
-
 			});
-			console.log(this.user);
 			
 	}
 
