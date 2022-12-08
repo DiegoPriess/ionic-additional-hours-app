@@ -4,6 +4,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Component({
 	selector: 'app-login',
@@ -16,7 +17,6 @@ export class LoginPage {
 		headers: new HttpHeaders({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*" })
 	}
 
-	apiUrl: string = 'http://181.221.14.79:9003';
 	email: string = "";
 	password: string = "";
 
@@ -24,12 +24,11 @@ export class LoginPage {
 	}
 
 	authenticate() {
-		this.httpClient.get(`${this.apiUrl}/user/auth/${this.email}/${this.password}`, this.httpOptions)
+		this.httpClient.get(`${environment.apiUrl}/user/auth/${this.email}/${this.password}`, this.httpOptions)
 			.pipe(
 				retry(2),
 				catchError(this.handleError)
 			).subscribe((response) => {
-				console.log(response);
 				this.router.navigate(['/home-adm']);
 			});
 	}

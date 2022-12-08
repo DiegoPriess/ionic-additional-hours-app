@@ -8,12 +8,15 @@ import { AddCertificatePageRoutingModule } from './add-certificate-routing.modul
 
 import { AddCertificatePage } from './add-certificate.page';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AddCertificatePageRoutingModule
+    AddCertificatePageRoutingModule,
+    HttpClientModule
   ],
   declarations: [AddCertificatePage]
 })

@@ -1,17 +1,14 @@
-<body class="login-page">
+<body class="add-certificate">
   <header>
     <img class="logo" src="../../assets/images/left-arrow.png">
     <div class="text">Adicionar Certificado</div>  
   </header>
   <div class="form">
-    <ion-item>
-      <ion-label position="floating">Quantidade de horas</ion-label>
-      <ion-input placeholder="Digite a quantidade de horas"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label position="floating">Certificado</ion-label>
-      <ion-input placeholder="Insira o certificado"></ion-input>
-    </ion-item>
-    <button>CONFIRMAR</button>
+    <div class="time-input">
+      <ion-label>Certificado</ion-label>
+      <input placeholder="Insira o certificado" type="time" [(ngModel)]="amountTime"/>
+    </div>
+  
+    <button (click)="addCertificate()">Confirmar</button>
   </div>
 </body>
