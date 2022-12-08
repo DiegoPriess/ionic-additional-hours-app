@@ -8,12 +8,15 @@ import { HomeAdmPageRoutingModule } from './home-adm-routing.module';
 
 import { HomeAdmPage } from './home-adm.page';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomeAdmPageRoutingModule
+    HomeAdmPageRoutingModule,
+    HttpClientModule
   ],
   declarations: [HomeAdmPage]
 })
