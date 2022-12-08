@@ -26,7 +26,11 @@ const routes: Routes = [
   {
     path: 'add-certificate',
     loadChildren: () => import('./add-certificate/add-certificate.module').then( m => m.AddCertificatePageModule)
+  },  {
+    path: 'valid-certificate',
+    loadChildren: () => import('./valid-certificate/valid-certificate.module').then( m => m.ValidCertificatePageModule)
   },
+
 
 ];
 
