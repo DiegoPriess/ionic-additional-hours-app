@@ -18,6 +18,13 @@
       }
     }
 
+    .user-content {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+
     .top-header-background {
       display: flex;
       width: 100%;
