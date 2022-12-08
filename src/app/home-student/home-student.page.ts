@@ -3,13 +3,14 @@ import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { catchError, retry, throwError } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home-student',
   templateUrl: './home-student.page.html',
   styleUrls: ['./home-student.page.scss'],
 })
-export class HomeStudentPage implements OnInit{
+export class HomeStudentPage {
 
   @ViewChild('listenerOut', { static: true })
   private values: string[] = ['first', 'second', 'third'];
@@ -21,13 +22,14 @@ export class HomeStudentPage implements OnInit{
   certificates: any;
 	apiUrl: string = 'http://181.221.14.79:9003';
 
-	constructor(private httpClient: HttpClient, private router: Router, private route: ActivatedRoute) {
+	constructor(private httpClient: HttpClient, private router: Router, private route: ActivatedRoute, private toastController: ToastController) {
 		this.route.queryParams.subscribe(params => {
 			this.student = this.router.getCurrentNavigation()?.extras;
+      this.listCertificates();
 		});
 	}
-  
-  ngOnInit(): void {
+
+  listCertificates() {
     this.httpClient.get(`${environment.apiUrl}/certificate/list/${this.student.id}`, this.httpOptions)
     .pipe(
       retry(2),
@@ -54,25 +56,38 @@ export class HomeStudentPage implements OnInit{
   }
 
   accordionGroupChange = (ev: any) => {
-
     const collapsedItems = this.values.filter((value) => value !== ev.detail.value);
     const selectedValue = ev.detail.value;
   };
 
   redirectToEditPage(certificate: object) {
-    let data = this.student;
-    data.push(certificate);
-    this.router.navigate(['/edit-certificate'], data);
+    certificate["idCertificate"] = certificate["id"];
+    delete certificate["id"];
+    this.router.navigate(['/edit-certificate'], Object.assign(this.student, certificate));
   }
 
   redirectToViewPage(certificate: object) {
-    let data = this.student;
-    data.push(certificate);
-    this.router.navigate(['/edit-certificate'], data);
+    this.router.navigate(['/edit-certificate'], Object.assign(this.student, certificate));
   }
 
-  deleteCertificate() {
-    
+  deleteCertificate(certificate: object) {
+    this.httpClient.delete(`${environment.apiUrl}/certificate/${certificate["id"]}`, this.httpOptions)
+    .pipe(
+      retry(2),
+      catchError(this.handleError.bind(this))
+    ).subscribe((response) => {
+      this.showToaster("Certificado deletado com sucesso");
+    });
+  }
+
+  async showToaster(msg: string) {
+    const toast = await this.toastController.create({
+      message: msg,
+      cssClass: "toast-success",
+      duration: 3000
+    });
+
+    await toast.present();
   }
 
 }

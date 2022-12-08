@@ -34,7 +34,7 @@ export class AddCertificatePage {
 				retry(2),
 				catchError(this.handleError)
 			).subscribe(() => {
-        this.showToaster();
+        this.showToaster("Certificado adicionado com sucesso");
 				this.router.navigate(['/home-student'], this.student);
 			});
 	}
@@ -46,7 +46,8 @@ export class AddCertificatePage {
 		} else {
 			errorMessage = `Código do erro: ${error.status}, ` + `menssagem: ${error.message}`;
 		}
-		console.log(errorMessage);
+		this.showToaster("Erro ao editar certificado");
+    this.router.navigate(['/home-student'], this.student);
 		return throwError(errorMessage);
 	};
 
@@ -62,9 +63,9 @@ export class AddCertificatePage {
     }
   }
 
-  async showToaster() {
+  async showToaster(msg: string) {
     const toast = await this.toastController.create({
-      message: 'Certificado adicionado com sucesso',
+      message: msg,
       cssClass: "toast-success",
       duration: 3000
     });

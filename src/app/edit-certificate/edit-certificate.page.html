@@ -6,11 +6,10 @@
   <div class="form">
     <div class="time-input">
       <ion-label>Certificado</ion-label> 
-      <input placeholder="Insira o certificado" type="time" [(ngModel)]="amountTime"/>
+      <input placeholder="Insira o certificado" type="time" [(ngModel)]="certificate.amountHours"/>
     </div>
     <div class="buttonBox">
-      <button class="buttonReject">Excluir</button>
-      <button class="buttonAccept">Confirmar</button>
+      <button class="buttonAccept" (click)="alterCertificate()">Confirmar</button>
     </div>
   </div>
 </body>
