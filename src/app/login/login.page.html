@@ -1,5 +1,5 @@
 <body class="login-page">
-  <img class="logo" src="../../assets/images/logo_catolica.png">
+  <img class="logo" src="../../assets/images/logo_catolica.png" />
   <div class="form">
     <p>Preencha com seus dados:</p>
     <ion-item>
@@ -8,8 +8,15 @@
     </ion-item>
     <ion-item>
       <ion-label position="floating">Senha</ion-label>
-      <ion-input placeholder="Digite sua senha" [(ngModel)]="password"></ion-input>
+      <ion-input
+        placeholder="Digite sua senha"
+        [(ngModel)]="password"
+      ></ion-input>
     </ion-item>
+    <div class="warning-error" *ngIf="!isFieldsAvailable">
+      <img src="../../assets/images/warning.png" />
+      <span> Usuário ou senha incorretos! </span>
+    </div>
     <button (click)="authenticate()">CONFIRMAR</button>
   </div>
 </body>
