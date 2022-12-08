@@ -1,4 +1,6 @@
 .admin-page {
+  background-color: #f0f0f0;
+
   .top-header-background {
     display: flex;
     width: 100%;
@@ -33,19 +35,57 @@
 
     .input {
       width: 60%;
-      background-color: #fff;
+      background-color: #f0f0f0;
       box-shadow: -3px 4px 10px 0px #63636340;
       border-radius: 15px;
       height: 30px;
-
-      input {
-        color: #000;
-      }
+      color: #000;
     }
   }
 
   .page-content {
     height: 85%;
-    background-color: #fff;
+    background-color: #f0f0f0;
+    margin-top: 30px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    ul {
+      padding: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 13px;
+
+      li {
+        background: #ffffff;
+        list-style: none;
+        box-shadow: -3px 4px 10px rgba(99, 99, 99, 0.25);
+        padding: 0 13px;
+
+        button {
+          width: 100%;
+          background: #ffffff;
+
+          .user-card {
+            display: flex;
+            justify-content: space-between;
+
+            p {
+              color: #646464;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+
+            img {
+              height: 36px;
+            }
+          }
+        }
+      }
+    }
   }
 }

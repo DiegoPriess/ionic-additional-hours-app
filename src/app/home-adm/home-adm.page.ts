@@ -2,6 +2,15 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Component, OnInit } from '@angular/core';
 import { catchError, retry, throwError } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
+interface UsersData {
+	cpf: string;
+	email: string;
+	id: number;
+	name: string;
+	password: string;
+	permission: string;
+	registrationNumber: string;
+}
 
 @Component({
 	selector: 'app-home-adm',
@@ -14,6 +23,9 @@ export class HomeAdmPage implements OnInit {
 	}
 	user: any;
 	apiUrl: string = 'http://181.221.14.79:9003';
+	usersData: UsersData[] = [];
+	filteredUsersData: UsersData[] = this.usersData;
+	search: string = "";
 
 	constructor(private httpClient: HttpClient, private router: Router, private route: ActivatedRoute) {
 		this.route.queryParams.subscribe(params => {
@@ -22,14 +34,29 @@ export class HomeAdmPage implements OnInit {
 	}
 
 	ngOnInit() {
-		this.httpClient.get(`${this.apiUrl}/list/0/1`, this.httpOptions)
+		this.httpClient.get(`${this.apiUrl}/user/list/0/10`, this.httpOptions)
 			.pipe(
 				retry(2),
 				catchError(this.handleError)
 			).subscribe((response) => {
 				console.log(response);
-				this.router.navigate(['/home-adm']);
+				response["content"].map((item: UsersData) => {
+					this.usersData.push(item);
+				})
+				console.log(this.usersData);
+
 			});
+	}
+
+	searchOnChange(event: any) {
+		const value: string = event.target.value.toLowerCase();
+		const newData = this.usersData.reduce((acc: UsersData[], val) => {
+			if (val.name.toLowerCase().includes(value)) {
+				acc.push(val);
+			}
+			return acc
+		}, []);
+		this.filteredUsersData = newData;
 	}
 
 	handleError(error: HttpErrorResponse) {
