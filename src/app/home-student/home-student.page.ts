@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, ViewChild, OnInit } from '@angular/core';
 import { catchError, retry, throwError } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
@@ -10,6 +10,9 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./home-student.page.scss'],
 })
 export class HomeStudentPage implements OnInit{
+
+  @ViewChild('listenerOut', { static: true })
+  private values: string[] = ['first', 'second', 'third'];
 
   httpOptions: object = {
 		headers: new HttpHeaders({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*" })
@@ -48,6 +51,28 @@ export class HomeStudentPage implements OnInit{
 
   addCertificate() {
     this.router.navigate(['/add-certificate'], this.student);
+  }
+
+  accordionGroupChange = (ev: any) => {
+
+    const collapsedItems = this.values.filter((value) => value !== ev.detail.value);
+    const selectedValue = ev.detail.value;
+  };
+
+  redirectToEditPage(certificate: object) {
+    let data = this.student;
+    data.push(certificate);
+    this.router.navigate(['/edit-certificate'], data);
+  }
+
+  redirectToViewPage(certificate: object) {
+    let data = this.student;
+    data.push(certificate);
+    this.router.navigate(['/edit-certificate'], data);
+  }
+
+  deleteCertificate() {
+    
   }
 
 }

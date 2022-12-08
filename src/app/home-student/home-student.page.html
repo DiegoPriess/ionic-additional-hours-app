@@ -2,23 +2,30 @@
   <div class="top-header-background">
     <div class="user-content">
       <img class="user-icon" src="../../assets/images/user.png" />
-      <p>{{student.name}}</p>
+      <p class="student-name">{{student.name}}</p>
     </div>
     <img class="fixed-logo" src="../../assets/images/logo_catolica_min.png" />
   </div>
   <div class="page-content">
     <div class="page-content">
-      <ul>
-        <li *ngFor="let certificate of certificates">
-          <button>
+      <ion-accordion-group (ionChange)="accordionGroupChange($event)">
+        <ion-accordion *ngFor="let certificate of certificates" value="{{certificate.id}}">
+          <ion-item slot="header" color="light">
             <div class="certificate-card">
               <p>{{certificate.dateCreation | date : 'dd/MM/yyyy'}}</p>
               <p>{{certificate.amountHours}}</p>
-              <img src=".././../assets/images/arrow_right.png" />
             </div>
-          </button>
-        </li>
-      </ul>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <div class="certificate-content">
+              <ion-icon (click)="redirectToEditPage(certificate)" name="create-outline"></ion-icon>
+              <ion-icon (click)="redirectToViewPage(certificate)" name="eye-outline"></ion-icon>
+              <ion-icon (click)="deleteCertificate()" name="trash-bin-outline"></ion-icon>
+            </div>
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
+
       <ion-fab (click)="addCertificate()" class="add-icon">
         <ion-fab-button>
           <ion-icon name="add"></ion-icon>
