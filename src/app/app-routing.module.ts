@@ -14,13 +14,18 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },  {
+  },
+  {
     path: 'home-adm',
     loadChildren: () => import('./home-adm/home-adm.module').then( m => m.HomeAdmPageModule)
   },
   {
     path: 'home-student',
     loadChildren: () => import('./home-student/home-student.module').then( m => m.HomeStudentPageModule)
+  },
+  {
+    path: 'add-certificate',
+    loadChildren: () => import('./add-certificate/add-certificate.module').then( m => m.AddCertificatePageModule)
   },
 
 ];
