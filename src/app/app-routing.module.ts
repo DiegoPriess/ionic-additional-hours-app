@@ -18,6 +18,10 @@ const routes: Routes = [
     path: 'home-adm',
     loadChildren: () => import('./home-adm/home-adm.module').then( m => m.HomeAdmPageModule)
   },
+  {
+    path: 'home-student',
+    loadChildren: () => import('./home-student/home-student.module').then( m => m.HomeStudentPageModule)
+  },
 
 ];
 
