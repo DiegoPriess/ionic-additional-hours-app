@@ -57,6 +57,7 @@ export class AddCertificatePage {
       "document": "",
       "description": "",
       "status": "P",
+      "dateCreation": "",
       "amountHours": this.amountTime
     }
   }

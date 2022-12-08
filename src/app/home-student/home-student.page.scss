@@ -1,4 +1,6 @@
 .home-student {
+    height: 100vh;
+
     .input-search {
       display: flex;
       top: 150px;
@@ -15,6 +17,7 @@
         border-radius: 50%;
       }
     }
+
     .top-header-background {
       display: flex;
       width: 100%;
@@ -34,7 +37,7 @@
     }
   
     .page-content {
-      height: 85%;
+      height: 85vh;
       background-color: #fff;
 
       .add-icon {
@@ -44,6 +47,42 @@
 
         ion-fab-button {
             --background: #8b3a3a;
+        }
+      }
+
+      ul {
+        padding: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+  
+        li {
+          background: #ffffff;
+          list-style: none;
+          box-shadow: -3px 4px 10px rgba(99, 99, 99, 0.25);
+          padding: 0 13px;
+  
+          button {
+            width: 100%;
+            background: #ffffff;
+  
+            .certificate-card {
+              display: flex;
+              justify-content: space-between;
+  
+              p {
+                color: #646464;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+              }
+  
+              img {
+                height: 36px;
+              }
+            }
+          }
         }
       }
     }
