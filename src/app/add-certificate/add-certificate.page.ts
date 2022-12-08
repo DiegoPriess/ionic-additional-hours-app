@@ -72,4 +72,8 @@ export class AddCertificatePage {
 
     await toast.present();
   }
+
+  backToHome(){
+    this.router.navigate(['/home-student'], this.student);
+  }
 }
