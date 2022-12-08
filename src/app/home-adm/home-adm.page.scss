@@ -1,0 +1,31 @@
+.top-header-background {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #8b3a3a;
+  padding: 0 10px;
+  height: 15%;
+  align-items: center;
+}
+
+.top-header-background .fixed-logo {
+  height: 5rem;
+}
+
+.top-header-background .user-icon {
+  height: 2.2rem;
+}
+
+.user-content {
+  display: flex;
+  align-items: center;
+}
+
+.input-search {
+  position: absolute;
+}
+
+.page-content {
+  height: 85%;
+  background-color: #fff;
+}

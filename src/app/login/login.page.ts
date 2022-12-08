@@ -16,7 +16,7 @@ export class LoginPage {
 		headers: new HttpHeaders({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*" })
 	}
 
-	apiUrl: string = 'http://181.221.14.79:9003/';
+	apiUrl: string = 'http://181.221.14.79:9003';
 	email: string = "";
 	password: string = "";
 
@@ -29,9 +29,8 @@ export class LoginPage {
 				retry(2),
 				catchError(this.handleError)
 			).subscribe((response) => {
-				console.log(response["name"]);
-
-				this.router.navigate(['/detail']);
+				console.log(response);
+				this.router.navigate(['/home-adm']);
 			});
 	}
 
