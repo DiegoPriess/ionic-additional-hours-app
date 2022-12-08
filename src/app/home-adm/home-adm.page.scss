@@ -32,6 +32,7 @@
     display: flex;
     justify-content: center;
     height: 30px;
+    --ion-background-color: none;
 
     .input {
       width: 60%;
@@ -44,11 +45,11 @@
   }
 
   .page-content {
-    height: 85%;
-    background-color: #f0f0f0;
-    margin-top: 30px;
-    padding: 0 20px;
     display: flex;
+    height: 85%;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 20px;
     flex-direction: column;
     gap: 7px;
 
@@ -56,10 +57,12 @@
       padding: 0;
       width: 100%;
       display: flex;
+      align-items: center;
       flex-direction: column;
       gap: 13px;
 
       li {
+        width: 100%;
         background: #ffffff;
         list-style: none;
         box-shadow: -3px 4px 10px rgba(99, 99, 99, 0.25);
