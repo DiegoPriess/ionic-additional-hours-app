@@ -1,0 +1,73 @@
+.login-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #8B3A3A;
+  
+    .logo {
+        position: absolute;
+        top: 10%;
+        width: 200px;
+        height: 190px;
+        animation: show-to-up 1s;
+    }
+
+    .form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 25px 0;
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        bottom: 0;
+        background-color: #EBEBEB;
+        border-radius: 45px 45px 0 0;
+        color: #0F0F0F;
+        animation: slide-bar 1s;
+
+        ion-label, ion-input{
+            color: #0F0F0F !important;
+        }
+
+        ion-item {
+            width: 80%;
+            --background: none;
+        }
+        
+        button {
+            background: #EBEBEB;
+            padding: 10px;
+            border-radius: 30px;
+            background-color: #8B3A3A;
+            width: 200px;
+            font-size: 20px;
+            animation: show 1s;
+            margin: 50px 0;
+            font-size: 16px;
+        }
+    }
+}
+  
+@keyframes show-to-up {
+    0% {
+        top: 20%;
+        width: 280px;
+        height: 270px;
+    }
+    100% {
+        top: 10%;
+        width: 200px;
+        height: 190px;
+    }
+}
+
+@keyframes slide-bar {
+    0% {
+        transform: translateY(50vh);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
