@@ -20,7 +20,6 @@ export class HomeStudentPage {
 	}
 	student: any;
   certificates: any;
-	apiUrl: string = 'http://181.221.14.79:9003';
 
 	constructor(private httpClient: HttpClient, private router: Router, private route: ActivatedRoute, private toastController: ToastController) {
 		this.route.queryParams.subscribe(params => {

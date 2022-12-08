@@ -1,94 +1,98 @@
 .home-student {
-    height: 100vh;
+  height: 100vh;
 
-    .student-name {
-      color: #F0F0F0;
-    }
+  .student-name {
+    color: #f0f0f0;
+  }
 
-    .input-search {
-      display: flex;
-      top: 150px;
-      position: absolute;
-      justify-content: center;
+  .input-search {
+    display: flex;
+    top: 150px;
+    position: absolute;
+    justify-content: center;
+    height: 100px;
+    width: 100%;
+
+    .quadrado {
+      width: 100px;
       height: 100px;
-      width: 100%;
-
-      .quadrado{
-        width: 100px;
-        height: 100px;
-        background-color: #8b3a3a;
-        border: 2px solid #5599FF;
-        border-radius: 50%;
-      }
-    }
-
-    .user-content {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-
-    .top-header-background {
-      display: flex;
-      width: 100%;
-      justify-content: space-between;
       background-color: #8b3a3a;
-      padding: 0 10px;
-      height: 15%;
-      align-items: center;
-  
-      .fixed-logo {
-        height: 4.5rem;
-      }
-  
-      .user-icon {
-        height: 2.2rem;
+      border: 2px solid #5599ff;
+      border-radius: 50%;
+    }
+  }
+
+  .user-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    p {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 190px;
+    }
+  }
+
+  .top-header-background {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #8b3a3a;
+    padding: 0 10px;
+    height: 15%;
+    align-items: center;
+
+    .fixed-logo {
+      height: 4.5rem;
+    }
+
+    .user-icon {
+      height: 2.2rem;
+    }
+  }
+
+  .page-content {
+    display: flex;
+    height: 90%;
+    width: 100%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    flex-direction: column;
+    gap: 7px;
+    overflow-x: auto;
+
+    .add-icon {
+      position: absolute;
+      right: 25px;
+      bottom: 25px;
+
+      ion-fab-button {
+        --background: #8b3a3a;
       }
     }
 
-    .page-content {
+    ion-item {
+      background-color: #ffffff !important;
+    }
+
+    ion-icon {
+      font-size: 20px;
+    }
+
+    ion-accordion {
+      margin-top: 20px;
+    }
+
+    .certificate-card {
       display: flex;
-      height: 90%;
-      width: 100%;
-      background-color: #f0f0f0;
-      padding: 20px;
-      flex-direction: column;
-      gap: 7px;
-      overflow-x: auto;
-
-        .add-icon {
-          position: absolute;
-          right: 25px;
-          bottom: 25px;
-
-          ion-fab-button {
-              --background: #8b3a3a;
-          }
-        }
-
-        ion-item {
-          background-color: #ffffff !important;
-        }
-
-        ion-icon {
-          font-size: 20px;
-        }
-
-        ion-accordion {
-          margin-top: 20px;
-        }
-    
-        .certificate-card {
-          display: flex;
-          justify-content: space-between;
-        }
-        
-        .certificate-content {
-          display: flex;
-          justify-content: space-between;
-        }
+      justify-content: space-between;
     }
-}
 
-  
+    .certificate-content {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
