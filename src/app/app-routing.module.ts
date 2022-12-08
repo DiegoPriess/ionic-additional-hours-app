@@ -26,7 +26,8 @@ const routes: Routes = [
   {
     path: 'add-certificate',
     loadChildren: () => import('./add-certificate/add-certificate.module').then( m => m.AddCertificatePageModule)
-  },  {
+  },
+  {
     path: 'valid-certificate',
     loadChildren: () => import('./valid-certificate/valid-certificate.module').then( m => m.ValidCertificatePageModule)
   },
@@ -34,7 +35,10 @@ const routes: Routes = [
     path: 'edit-certificate',
     loadChildren: () => import('./edit-certificate/edit-certificate.module').then( m => m.EditCertificatePageModule)
   },
-
+  {
+    path: 'view-certificate',
+    loadChildren: () => import('./view-certificate/view-certificate.module').then( m => m.ViewCertificatePageModule)
+  },
 
 ];
 

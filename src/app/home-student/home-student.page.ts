@@ -66,7 +66,7 @@ export class HomeStudentPage {
   }
 
   redirectToViewPage(certificate: object) {
-    this.router.navigate(['/edit-certificate'], Object.assign(this.student, certificate));
+    this.router.navigate(['/view-certificate'], Object.assign(this.student, certificate));
   }
 
   deleteCertificate(certificate: object) {

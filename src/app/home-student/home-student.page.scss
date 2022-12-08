@@ -5,20 +5,17 @@
     color: #f0f0f0;
   }
 
-  .input-search {
+  .icons {
     display: flex;
-    top: 150px;
-    position: absolute;
-    justify-content: center;
-    height: 100px;
-    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 90%;
 
-    .quadrado {
-      width: 100px;
-      height: 100px;
-      background-color: #8b3a3a;
-      border: 2px solid #5599ff;
-      border-radius: 50%;
+    ion-icon {
+      color: #F0F0F0;
+      font-size: 24px;
+      padding: 10px;
     }
   }
 
@@ -45,7 +42,7 @@
     align-items: center;
 
     .fixed-logo {
-      height: 4.5rem;
+      height: 3.5rem;
     }
 
     .user-icon {
@@ -87,6 +84,7 @@
 
     .certificate-card {
       display: flex;
+      width: 100%;
       justify-content: space-between;
     }
 

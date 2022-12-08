@@ -19,15 +19,14 @@ export class ViewCertificatePage implements OnInit {
 		this.route.queryParams.subscribe(params => {
 			this.data = this.router.getCurrentNavigation()?.extras;
 
-      this.certificate = {
-        id: this.data["idCertificate"],
-        dateCreation: this.data["dateCreation"],
-        amountHours: this.data["amountHours"],
-        status: this.data["status"],
-        document: this.data["document"],
-        description: this.data["description"],
-        userCreator: this.data["userCreator"]["id"],
-        userJudge: this.data["userJudge"]["id"],
+      this.student = {
+        cpf: this.data["cpf"],
+        email: this.data["email"],
+        id: this.data["id"],
+        name: this.data["name"],
+        password: this.data["password"],
+        permission: this.data["permission"],
+        registrationNumber:this.data["registrationNumber"]
       }
 
       this.certificate = {
