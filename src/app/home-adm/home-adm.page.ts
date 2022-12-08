@@ -46,6 +46,8 @@ export class HomeAdmPage implements OnInit {
 				console.log(this.usersData);
 
 			});
+			console.log(this.user);
+			
 	}
 
 	searchOnChange(event: any) {
@@ -69,5 +71,9 @@ export class HomeAdmPage implements OnInit {
 		console.log(errorMessage);
 		return throwError(errorMessage);
 	};
+
+	onClickStudent(ia: number) {
+		console.log(ia);
+	}
 
 }

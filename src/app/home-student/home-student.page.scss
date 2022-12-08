@@ -36,6 +36,16 @@
     .page-content {
       height: 85%;
       background-color: #fff;
+
+      .add-icon {
+        position: absolute;
+        right: 25px;
+        bottom: 25px;
+
+        ion-fab-button {
+            --background: #8b3a3a;
+        }
+      }
     }
 }
 

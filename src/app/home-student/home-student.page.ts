@@ -13,13 +13,17 @@ export class HomeStudentPage {
   httpOptions: object = {
 		headers: new HttpHeaders({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*" })
 	}
-	user: any;
+	student: any;
 	apiUrl: string = 'http://181.221.14.79:9003';
 
 	constructor(private httpClient: HttpClient, private router: Router, private route: ActivatedRoute) {
 		this.route.queryParams.subscribe(params => {
-			this.user = this.router.getCurrentNavigation()?.extras;
+			this.student = this.router.getCurrentNavigation()?.extras;
 		});
 	}
+
+  addCertificate() {
+    this.router.navigate(['/add-certificate'], this.student);
+  }
 
 }

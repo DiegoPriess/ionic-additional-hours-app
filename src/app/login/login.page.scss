@@ -47,6 +47,16 @@
             margin: 50px 0;
             font-size: 16px;
         }
+
+		.warning-error {
+				display: flex;
+				align-items: center;
+				margin-top: 10px;
+
+				img {
+					height: 26px;
+				}
+		}
     }
 }
   

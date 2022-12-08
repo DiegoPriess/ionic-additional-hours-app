@@ -12,7 +12,7 @@
   <div class="page-content">
     <ul>
       <li *ngFor="let user of filteredUsersData">
-        <button>
+        <button (click)="onClickStudent(user.id)">
           <div class="user-card">
             <p>{{user.name}}</p>
             <img src=".././../assets/images/arrow_right.png" />
