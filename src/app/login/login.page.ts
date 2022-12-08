@@ -21,7 +21,7 @@ export class LoginPage {
   email: string = "";
   password: string = "";
 
-  constructor(private httpClient: HttpClient, private router: Router, private storage: Storage) {
+  constructor(private httpClient: HttpClient, private router: Router) {
   }
 
   authenticate(){

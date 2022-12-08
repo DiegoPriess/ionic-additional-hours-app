@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-import { Storage } from '@ionic/storage';
 
 import { LoginPageRoutingModule } from './login-routing.module';
 
