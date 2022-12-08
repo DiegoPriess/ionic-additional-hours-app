@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditCertificatePage implements OnInit {
 
+  amountTime: any | undefined;
+
   constructor() { }
 
   ngOnInit() {
