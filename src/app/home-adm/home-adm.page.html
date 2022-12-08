@@ -1,4 +1,4 @@
-<body>
+<body class="admin-page">
   <div class="top-header-background">
     <div class="user-content">
       <img class="user-icon" src="../../assets/images/user.png" />
@@ -7,9 +7,11 @@
     <img class="fixed-logo" src="../../assets/images/logo_catolica_min.png" />
   </div>
   <div class="input-search">
-    <ion-searchbar placeholder="Pesquisar..."></ion-searchbar>
+    <ion-searchbar
+      class="input"
+      placeholder="Pesquisar..."
+      [(ngModel)]
+    ></ion-searchbar>
   </div>
-  <div class="page-content">
-	
-  </div>
+  <div class="page-content"></div>
 </body>

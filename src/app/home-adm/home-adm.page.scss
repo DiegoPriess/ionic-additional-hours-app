@@ -1,31 +1,51 @@
-.top-header-background {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  background-color: #8b3a3a;
-  padding: 0 10px;
-  height: 15%;
-  align-items: center;
-}
+.admin-page {
+  .top-header-background {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #8b3a3a;
+    padding: 0 10px;
+    height: 15%;
+    align-items: center;
 
-.top-header-background .fixed-logo {
-  height: 5rem;
-}
+    .fixed-logo {
+      height: 4.5rem;
+    }
 
-.top-header-background .user-icon {
-  height: 2.2rem;
-}
+    .user-icon {
+      height: 2.2rem;
+    }
+  }
 
-.user-content {
-  display: flex;
-  align-items: center;
-}
+  .user-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 
-.input-search {
-  position: absolute;
-}
+  .input-search {
+    position: absolute;
+    width: 100%;
+    margin-top: -16px;
+    display: flex;
+    justify-content: center;
+    height: 30px;
 
-.page-content {
-  height: 85%;
-  background-color: #fff;
+    .input {
+      width: 60%;
+      background-color: #fff;
+      box-shadow: -3px 4px 10px 0px #63636340;
+      border-radius: 15px;
+      height: 30px;
+
+      input {
+        color: #000;
+      }
+    }
+  }
+
+  .page-content {
+    height: 85%;
+    background-color: #fff;
+  }
 }
