@@ -1,5 +1,9 @@
 .admin-page {
   background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
   .icons {
     display: flex;
@@ -48,20 +52,38 @@
 
   .input-search {
     position: absolute;
-    width: 100%;
-    margin-top: -16px;
+
+    top: 13%;
+
     display: flex;
     justify-content: center;
-    height: 30px;
-    --ion-background-color: none;
+    align-items: center;
 
-    .input {
-      width: 60%;
-      background-color: #f0f0f0;
-      box-shadow: -3px 4px 10px 0px #63636340;
-      border-radius: 15px;
-      height: 30px;
+    width: 60%;
+    height: 30px;
+
+    background-color: #f0f0f0;
+    
+    box-shadow: 3px 4px 10px 0px #63636340;
+    border-color: unset;
+    border-radius: 15px;
+    
+    ion-icon {
+      width: 5%;
+      margin: 0 2%;
+      font-size: 18px;
       color: #000;
+    }
+
+    input {
+
+      all: unset;
+      width: 90%;
+
+      border: none;
+
+      color: #000;
+      background-color: #f0f0f0;
     }
   }
 

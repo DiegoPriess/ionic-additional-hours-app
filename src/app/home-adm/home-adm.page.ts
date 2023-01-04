@@ -23,10 +23,9 @@ export class HomeAdmPage implements OnInit {
 		headers: new HttpHeaders({ 'Content-Type': 'application/json', "Access-Control-Allow-Origin": "*" })
 	}
 	student: any;
-	apiUrl: string = 'http://181.221.14.79:9003';
 	usersData: UsersData[] = [];
 	filteredUsersData: UsersData[] = this.usersData;
-	search: string = "";
+	searchInput: string = "";
 
 	constructor(private httpClient: HttpClient, private router: Router, private route: ActivatedRoute) {
 		this.route.queryParams.subscribe(params => {
@@ -47,10 +46,9 @@ export class HomeAdmPage implements OnInit {
 			
 	}
 
-	searchOnChange(event: any) {
-		const value: string = event.target.value.toLowerCase();
+	searchOnChange() {
 		const newData = this.usersData.reduce((acc: UsersData[], val) => {
-			if (val.name.toLowerCase().includes(value)) {
+			if (val.name.toLowerCase().includes(this.searchInput.toLowerCase())) {
 				acc.push(val);
 			}
 			return acc
